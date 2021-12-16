@@ -1,17 +1,26 @@
+https://www.mckinsey.com/about-us/new-at-mckinsey-blog --> use for our teams
+chnage font style -- done
+parthnership -- show some in homepage the link to it own page
+anywhere you see emtris it must be the logo -- doing
+remove nigeria number and add us number -- pending
+four articles after Speak With Our Expert.  -- done
+put social link at the top -- facebook insa linkdin
+remove about us and put event Pan in the home page -- removed but still remains some white spacing
 
 
-index -- done
-about --done
-Contact -- done
-solutions -- seen will doing:
-    create user login the admin --done
-    create solution detail and load it in htnl
-    load data in nav too
+
+about change to white background -- done
+
+insight page -- has all the articles --done
+solution sub nav -- turn them tolower case .. and backgroud shoould be trasparent
+about us sub nav --
+    About us--remove our team from about page.. -- done
+    our teams which should be like detail(page)-- done
 
 
-linking -- done
-deploying
 
-products -- remove
-parnership Network -- may remove
-Blog -- seen will do -- remove and do later
+schedule appointment should be -calendly
+using the Speack with our expert style
+    joinPathnershipNetwork -- needs content,add to nav and make content funtional(make it uncopy able and use blog detail template) 
+    work with emtrics suite(cv)-- create a page that has it form
+Location Page

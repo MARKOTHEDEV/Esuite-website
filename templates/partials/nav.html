@@ -4,7 +4,36 @@
         <!--Header Start-->
         <header id="rs-header" class="rs-header style3 modify2 header-transparent">
             <!-- Menu Start -->
-            <div class="menu-area menu-sticky">
+            <div 
+            
+            {% if  '/join-pather-ship-network/' in request.path    %}
+            class="menu-area menu-sticky sticky "
+            style='box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);background:blue;'
+            
+
+            {% elif  '/work-with-emetrics/' in request.path   %}
+            class="menu-area menu-sticky sticky "
+            style='box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);background:blue;'
+
+            {% elif  '/about/' in request.path   %}
+            class="menu-area menu-sticky sticky "
+            style='box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);background:blue;'
+
+            {% elif 'insight' in request.path %}
+            class="menu-area menu-sticky sticky "
+            style='box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);background:blue;'
+
+            {% elif 'our-team' in request.path %}
+            class="menu-area menu-sticky sticky "
+            style='box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);background:blue;'
+
+            {% else %}
+            class="menu-area menu-sticky"
+
+            {% endif %}
+                
+            
+            >
                 <div class="container">
                     <div class="row align-items-center">
                         <div class="col-lg-2">
@@ -84,8 +113,22 @@
                                                 </ul> -->
                                                  <!-- //.mega-menu -->  
                                             </li>
-                                           <li>
-                                               <a href="{% url 'about' %}">About</a>
+
+                                            <li class="rs-mega-menu  current-menu-item"> 
+                                                <a href="{% url 'list-of-insight' %}">Insight</a>
+                                            </li>
+
+                                            <!-- <li class="rs-mega-menu  current-menu-item"> 
+                                                <a href="{% url 'joinPatherShipNetwork' %}">Pathnership Network</a>
+                                            </li> -->
+
+                                           <li class="menu-item-has-children">
+                                               <a href="#">About</a>
+
+                                               <ul class="sub-menu">
+                                                <li><a href="{% url 'about' %}" >About</a></li>
+                                                <li><a href="{% url 'our_team' %}">Our Team</a></li>
+                                               </ul>
                                            </li>
                                            <!-- <li class="menu-item-has-children">
                                                <a href="#">Product</a>
@@ -185,6 +228,20 @@
             </div>
             <div class="canvas-contact">
                   <div class="address-area">
+
+                    
+
+                    <div class="address-list">
+                        <div class="info-content">
+                            <p class="title"><a class="submit-btn orange-btn"  href="{% url 'joinPatherShipNetwork' %}">Pathnership Network</a></p>
+                            <p class="title"><a class="submit-btn orange-btn" href="{% url 'work-with-emetric' %}">Come Work with us</a></p>
+                           
+                            <em></em>
+                            <br/>
+                            <!-- <em><a href="{% url 'work-with-emetric' %}">Come Work with us</a></em> -->
+                        </div>
+                    </div>
+
                       <div class="address-list">
                           <div class="info-icon">
                               <i class="flaticon-location"></i>
@@ -194,6 +251,7 @@
                               <em>9304 Forest lane, Suite S207, Dallas, Texas 75243</em>
                           </div>
                       </div>
+                    
                       <div class="address-list">
                           <div class="info-icon">
                               <i class="flaticon-email"></i>
@@ -202,6 +260,8 @@
                               <h4 class="title">Email</h4>
                               <em><a href="mailto:info@emetricsuite.com"> info@emetricsuite.com</a></em>
                           </div>
+
+                          
                       </div>
                       <div class="address-list">
                           <div class="info-icon">
@@ -214,11 +274,25 @@
                           </div>
                       </div>
                   </div>
+                  
                 <ul class="social">
-                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                    <li><a href="#"><i class="fa fa-pinterest-p"></i></a></li>
-                    <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                    <li>
+                        <a href="#" style="padding: 0 .4rem;" target="_blank"><span><i class="fab fa-facebook"></i></span></a> 
+
+                    </li>
+                    <li>
+
+                        <a href="# " style="padding: 0 .4rem;" target="_blank"><span><i class="fab fa-twitter"></i></span></a> 
+                    </li>
+                    <li>
+
+                        <a href="# " style="padding: 0 .4rem;" target="_blank"><span><i class="fab fa-linkedin-in"></i></span></a> 
+                    </li>
+                    <li>
+                        <a href="# " style="padding: 0 .4rem;" target="_blank"><span><i class="fab fa-instagram"></i></span></a> 
+
+                    </li>
+                     
                 </ul>
             </div>
         </nav>

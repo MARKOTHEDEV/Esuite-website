@@ -23,3 +23,19 @@ def solutionDetail(request,pk=None):
         "solution":solution,"solution_para":solution.solutiondetailparagraph_set.all(),
         "all_solutions":models.SolutionDetail.objects.all()
         })
+
+def joinPatherShipNetwork(request):
+    
+
+    return render(request,'joinPathnershipNetwork.html',{ "all_solutions":models.SolutionDetail.objects.all()})
+
+
+def workWithEmetrics(request):
+    return render(request,'workWithEmetrics.html',{ "all_solutions":models.SolutionDetail.objects.all()})
+
+
+def all_insightPage(request):
+    return render(request,'insightPage.html',{ "all_solutions":models.SolutionDetail.objects.all()})
+
+def our_team(request):
+    return render(request,'ourTeam.html')
