@@ -1,5 +1,5 @@
 from django.db import models
-
+import uuid
 
 
 class SolutionDetail(models.Model):
@@ -39,3 +39,32 @@ class Contact(models.Model):
     message = models.TextField()
 
     def __str__(self):return f'{self.name}'
+
+
+class ContinentLocation(models.Model):
+    slug = models.CharField(max_length=100,)
+    name = models.CharField(max_length=300)
+
+    def __str__(self):
+        return f'{self.name}'
+
+
+
+class CountryLocation(models.Model):
+    slug = models.CharField(max_length=100)
+    continent_location = models.ForeignKey(ContinentLocation,on_delete=models.CASCADE)
+    name = models.CharField(max_length=300)
+
+    def __str__(self):
+        return f'{self.name}'
+
+class countryAddress(models.Model):
+    state = models.CharField(max_length=300,default="..")
+    phone = models.CharField(max_length=300)
+    address = models.TextField()
+    country_location = models.ForeignKey(CountryLocation,on_delete=models.CASCADE)
+
+
+    def __str__(self):return f'{self.country_location.name}'
+
+    

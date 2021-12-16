@@ -33,6 +33,11 @@
             style='box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);background:blue;'
 
 
+            {% elif 'locations' in request.path %}
+            class="menu-area menu-sticky sticky "
+            style='box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);background:blue;'
+
+            
             {% else %}
             class="menu-area menu-sticky"
 
@@ -118,6 +123,10 @@
                                                     </li>
                                                 </ul> -->
                                                  <!-- //.mega-menu -->  
+                                            </li>
+
+                                            <li>
+                                                <a href="{% url 'locations' %}">Location</a>
                                             </li>
 
                                             <li class="rs-mega-menu  current-menu-item"> 

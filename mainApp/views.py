@@ -91,3 +91,35 @@ def all_insightPage(request):
 
 def our_team(request):
     return render(request,'ourTeam.html')
+
+
+def locations(request):
+
+    # data =[{
+    #     'continent':'Africa',
+    #     'continent_slug':'334',
+    #     "countries":[
+    #         {'country_name':"nigeria",'all_addresse':[
+    #             {'phone':"",
+    #             'address':'',
+    #             "country_location":""},
+    #             {'phone':"",
+    #             'address':'',
+    #             "country_location":""},
+    #         ]}
+    #     ]
+    # }]
+    data =[]
+    for continent_data in models.ContinentLocation.objects.all():
+        "this will get all the continent in our Data List"
+        data.append({
+            'continent':continent_data.name,'continent_slug':continent_data.slug,
+            'countires':[
+               {"country_name":country.name,
+               "slug":country.slug
+               ,'all_addresse':country.countryaddress_set.all().values('state','phone','country_location','address')} for country in continent_data.countrylocation_set.all()
+            ]
+        })
+
+    # print(data)
+    return render(request,'locations.html',{'all_data':data})

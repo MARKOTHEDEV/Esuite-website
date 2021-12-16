@@ -24,3 +24,8 @@ admin.site.register(models.SolutionDetail,SolutionDetailAdmin)
 admin.site.register(models.Contact)
 admin.site.register(models.ParthershipNetwork)
 admin.site.register(models.WorkWithus)
+
+admin.site.register(models.countryAddress)
+admin.site.register(models.CountryLocation)
+
+admin.site.register(models.ContinentLocation)
