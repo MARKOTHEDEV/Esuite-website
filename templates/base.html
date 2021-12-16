@@ -59,11 +59,48 @@
               .sub-menu{
                 background:#ffffffe3 !important;
               }
+
+              .messages{
+                background-color: #9ad1a7;
+                color: white;
+                position: fixed;
+                top: 0;
+                padding: 1rem 1.4rem;
+                left: 0;
+                width: 100%;
+                z-index: 100;
+                max-width: 500px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin: 5% 50%;
+                border-radius: 20px;
+                cursor: pointer;
+              }
+  
+              
+              
             </style>
     </head>
     <body class="defult-home">
         <div class="offwrap"></div>
         
+        
+        {% if messages %}
+        <ul class="messages" id="messageModal">
+          <!-- <li>sdkoeo</li> -->
+            {% for message in messages %}
+            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>
+            <!-- dkijfirifirfnrnfn  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorum quos nemo consectetur ipsa. Non autem incidunt dolores fugit iste. Ut consequatur numquam dolorum officiis non minima culpa eos asperiores aperiam. -->
+            {{ message }}</li>
+            {% endfor %}
+
+          <i class="fas fa-times" id="closeModal" ></i>
+
+        </ul>
+        {% endif %}
+
+
         <!--Preloader area start here-->
         <div id="loader" class="loader">
             <div class="loader-container"></div>
@@ -114,7 +151,16 @@
             </div>
         </div>
         <!-- Search Modal End -->
-
+ 
+        <script>
+            const messageModal= document.querySelector('#messageModal');
+            const closeModal = document.querySelector('#closeModal')
+  
+            closeModal.addEventListener('click',e=>{
+  
+              messageModal.style.display='none'
+            })
+          </script>
          <!-- modernizr js -->
         <script src="{% static  'assets/js/modernizr-2.8.3.min.js'%}"></script>
         <!-- jquery latest version -->
