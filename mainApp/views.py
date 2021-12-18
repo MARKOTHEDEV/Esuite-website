@@ -90,7 +90,7 @@ def all_insightPage(request):
     return render(request,'insightPage.html',{ "all_solutions":models.SolutionDetail.objects.all()})
 
 def our_team(request):
-    return render(request,'ourTeam.html')
+    return render(request,'ourTeam.html',{ "all_solutions":models.SolutionDetail.objects.all()})
 
 
 def locations(request):
@@ -122,4 +122,4 @@ def locations(request):
         })
 
     # print(data)
-    return render(request,'locations.html',{'all_data':data})
+    return render(request,'locations.html',{'all_data':data, "all_solutions":models.SolutionDetail.objects.all()  })
